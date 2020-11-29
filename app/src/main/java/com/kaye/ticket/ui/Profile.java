@@ -2,10 +2,14 @@ package com.kaye.ticket.ui;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -32,8 +36,26 @@ public class Profile extends Fragment {
     }
 
     @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        menu.clear();
+        inflater.inflate(R.menu.menu_profile_edit,menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        saveChange.setVisibility(View.VISIBLE);
+        for(EditText el : Input){
+            el.setFocusableInTouchMode(true);
+            System.out.println(el.getText().toString());
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        setHasOptionsMenu(true);
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         Input.add(view.findViewById(R.id.profileEmail));

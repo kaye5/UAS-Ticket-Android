@@ -16,6 +16,8 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,10 +38,13 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //skip to home on debug
-        Intent home = new Intent(LoginActivity.this, MainActivity.class);
-        startActivity(home);
+//        Intent home = new Intent(LoginActivity.this, MainActivity.class);
+//        startActivity(home);
         //skip to home on debug
+        this.getSupportActionBar().hide();
         setContentView(R.layout.activity_login);
         loginViewModel = new ViewModelProvider(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
@@ -80,6 +85,7 @@ public class LoginActivity extends AppCompatActivity {
                 setResult(Activity.RESULT_OK);
 
                 //Complete and destroy login activity once successful
+
                 Intent home = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(home);
                 finish();
