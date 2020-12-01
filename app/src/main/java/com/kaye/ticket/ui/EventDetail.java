@@ -2,21 +2,17 @@ package com.kaye.ticket.ui;
 
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.kaye.ticket.ChangeFragment;
 import com.kaye.ticket.R;
-import com.kaye.ticket.booking.dummy.TicketContent;
 import com.kaye.ticket.events.dummy.ListEventsContent;
 
 public class EventDetail extends Fragment {
@@ -48,7 +44,7 @@ public class EventDetail extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentManager fm = getFragmentManager();
-                PaymentDialog payment =  PaymentDialog.newInstance(mEvent.getTitle(),mEvent.getID());
+                PaymentDialog payment =  PaymentDialog.newInstance(mEvent.getTitle(),mEvent.getEventID());
                 payment.show(fm,"payment");
 //                TicketContent.addTicketsBooking(mEvent.getID());
 //                new ChangeFragment(new Tickets(),getFragmentManager(),"event detail");

@@ -30,19 +30,19 @@ public class ListEventsContent {
 
     public static class EventsDummy {
 
-        public final String time, description, title, id;
+        public final String time, description, title, eventID;
         public final Integer img;
 
         public EventsDummy(String id, String title, String time, String description, Integer img) {
             this.img = img;
-            this.id = id;
+            this.eventID = id;
             this.title = title;
             this.time = time;
             this.description = description;
         }
 
-        public String getID() {
-            return id;
+        public String getEventID() {
+            return eventID;
         }
 
         public String getTime() {

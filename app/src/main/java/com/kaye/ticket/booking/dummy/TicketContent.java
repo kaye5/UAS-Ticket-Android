@@ -34,7 +34,7 @@ public class TicketContent {
         Date date = Calendar.getInstance().getTime();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
         String strDate = dateFormat.format(date);
-        ITEMS.add(new TicketDummyItem(eventID, String.valueOf(ITEMS.size()), strDate));
+        ITEMS.add(new TicketDummyItem(eventID, String.valueOf(System.currentTimeMillis()), strDate));
     }
 
     /**
@@ -49,16 +49,13 @@ public class TicketContent {
             this.regisDate = regisDate;
         }
 
-        public String getEventID() {
-            return eventID;
-        }
 
         public String getRegisDate() {
             return regisDate;
         }
 
         public String getTicketID() {
-            return eventID;
+            return ticketID;
         }
 
 
