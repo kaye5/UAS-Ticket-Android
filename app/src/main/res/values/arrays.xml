@@ -1,0 +1,12 @@
+<resources>
+    <!-- Reply Preference -->
+    <string-array name="profile_view_entries">
+        <item>Registered Event</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="profile_view_values">
+        <item>registered_event</item>
+        <item>no</item>
+    </string-array>
+</resources>

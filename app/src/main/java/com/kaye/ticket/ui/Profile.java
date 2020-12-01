@@ -1,5 +1,6 @@
 package com.kaye.ticket.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -21,6 +22,7 @@ import android.widget.TextView;
 import com.kaye.ticket.ChangeFragment;
 import com.kaye.ticket.R;
 import com.kaye.ticket.booking.dummy.TicketContent;
+import com.kaye.ticket.setting.SettingsActivity;
 
 import java.util.ArrayList;
 
@@ -78,11 +80,13 @@ public class Profile extends Fragment {
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                saveChange.setVisibility(View.VISIBLE);
-                for(EditText el : Input){
-                    el.setFocusableInTouchMode(true);
-                    System.out.println(el.getText().toString());
-                }
+                Intent intent = new Intent(v.getContext(),SettingsActivity.class);
+                startActivity(intent);
+//                saveChange.setVisibility(View.VISIBLE);
+//                for(EditText el : Input){
+//                    el.setFocusableInTouchMode(true);
+//                    System.out.println(el.getText().toString());
+//                }
             }
         });
 

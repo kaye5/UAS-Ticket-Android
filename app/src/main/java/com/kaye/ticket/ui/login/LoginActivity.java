@@ -41,8 +41,8 @@ public class LoginActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //skip to home on debug
-//        Intent home = new Intent(LoginActivity.this, MainActivity.class);
-//        startActivity(home);
+        Intent home = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(home);
         //skip to home on debug
         this.getSupportActionBar().hide();
         setContentView(R.layout.activity_login);
